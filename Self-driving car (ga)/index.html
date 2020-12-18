@@ -18,6 +18,7 @@
 		<script src="p5.min.js"></script>
 		<script src="sketch.js"></script>
 		<script src="Vehicle.js"></script>
+		<script src="Player.js"></script>
 		<script src="DOM_elements.js"></script>
 
 		<!-- Libraries such as matrix.js and the neural network code -->
@@ -26,13 +27,26 @@
 		<script src="lib\matrix.js"></script>
 
 		<script src="Genetic algorithm.js"></script>
-
 	</head>
 
 	<body>
 		<div class="running-interface">
 			<p class="frameRate-holder">60</p>
 			<p class="generationP">Generation: 0</p>
+
+			<input type="button" class="dud-button button" value="Dud" />
+			<input
+				type="button"
+				class="saveBest-button button"
+				value="Save Best Vehicle"
+			/>
+			<input
+				type="button"
+				class="joinIn-button button"
+				value="Enter race"
+			/>
+
+			<input type="color" name="picker" class="myColor">
 
 			<label class="container"
 				>Debug info
@@ -51,13 +65,6 @@
 				<input type="checkbox" class="bestOnly-checkBox checkBox" />
 				<span class="checkmark"></span>
 			</label>
-
-			<input type="button" class="dud-button button" value="Dud" />
-			<input
-				type="button"
-				class="saveBest-button button"
-				value="Save Best Vehicle"
-			/>
 			<p class="drop-car-data">Drop AI data here</p>
 		</div>
 
@@ -111,7 +118,7 @@
 
 		function showSlides(n) {
 			var slides = document.getElementsByClassName("mySlides");
-			var dots = document.getElementsByClassName('dot');
+			var dots = document.getElementsByClassName("dot");
 
 			slideIndex = n;
 			if (n < 1) slideIndex = slides.length;
@@ -125,10 +132,8 @@
 				dots[i].className.replace(" active", "");
 			}
 
-
-			slides[slideIndex-1].style.display = "block";
-			dots[slideIndex-1].className += " active";
-			
+			slides[slideIndex - 1].style.display = "block";
+			dots[slideIndex - 1].className += " active";
 		}
 
 		//Auto choose slide
@@ -138,9 +143,7 @@
 
 		//Next/prev slide
 		function plusSides(n) {
-			showSlides(slideIndex+n);
-
+			showSlides(slideIndex + n);
 		}
-
 	</script>
 </html>

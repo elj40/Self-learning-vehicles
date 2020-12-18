@@ -19,6 +19,9 @@ var mutationRate = 1;
 
 var cnv;
 
+
+var player = null;
+
 function preload() {
 	track = loadJSON("data/Race_tracks/RaceTrack_" + currentTrack + ".json");
 }
@@ -32,6 +35,7 @@ function setup() {
 	}
 
 	bestEver = new Car(0, 0);
+
 }
 
 function draw() {
@@ -39,7 +43,7 @@ function draw() {
 
 	//drawWalls();
 	prettyUp(track.its);
-	
+
 	if (!bestOnly.checked()) {
 		for (let v of population) {
 			v.see(track.walls);
@@ -62,6 +66,12 @@ function draw() {
 			bestEver.pos.y = 100;
 			bestEver.crashed = false;
 		}
+	}
+
+	if (player) {
+		player.see(track.walls);
+		player.show();
+		player.update();
 	}
 	/**/
 }

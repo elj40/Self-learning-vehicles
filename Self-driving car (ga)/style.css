@@ -111,6 +111,16 @@ body {
 	color: white;
 }
 
+/*Color picker*/
+.myColor {
+	width: 24px;
+	height: 24px;
+	padding: 10px;
+	background-color: rgba(100,100,255,0.8); 
+	border-color: rgba(100,100,255,0.8);
+	border-radius: 2px;
+}
+
 /* Slideshow stuff */
 .entire-slideshow {
 	box-sizing: border-box;
